@@ -11,7 +11,7 @@ Server* setUpServerConnections() {
 
 	s->addr.sin_addr.s_addr = INADDR_ANY;
 	s->addr.sin_family = AF_INET;
-    s->addr.sin_port = htons(5004);
+    s->addr.sin_port = htons(8080);
     s->sock = socket(AF_INET, SOCK_STREAM, 0);
 	bind(s->sock, (struct sockaddr*)&s->addr, sizeof(s->addr));
     listen(s->sock, 0);

@@ -17,14 +17,18 @@ int main(int argc, char **argv) {
 		return 1;
 	} else {
 		Client *c = connectAsClient(argv[1]);
+
 		if (c > 0) {
+			printf(c);
 			bool runningClient = true;
 			char *buffer = (char *)calloc(sizeof(char), BUFF + 1);
 			int recv = 0;
 			int count = 0;
 			int interval = 1000000;
-			while(runningClient) {
-				int val = receiveData(c, buffer); 
+
+			while (runningClient)
+			{
+				int val = receiveData(c, buffer);
 				if (val < 0) {
 					runningClient = false;
 				} else if (val > 0) {
