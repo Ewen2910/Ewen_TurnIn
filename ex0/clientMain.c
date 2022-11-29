@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 		Client *c = connectAsClient(argv[1]);
 
 		if (c > 0) {
-			printf(c);
+			printf("ok\n");
 			bool runningClient = true;
 			char *buffer = (char *)calloc(sizeof(char), BUFF + 1);
 			int recv = 0;
@@ -30,6 +30,7 @@ int main(int argc, char **argv) {
 			{
 				int val = receiveData(c, buffer);
 				if (val < 0) {
+					printf("pk\n");
 					runningClient = false;
 				} else if (val > 0) {
 					printf("%i from server\n", *(int*)buffer);

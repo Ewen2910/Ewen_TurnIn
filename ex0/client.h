@@ -1,3 +1,4 @@
+#define BUFF 1024
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -9,6 +10,7 @@
 #include <stdbool.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <sys/select.h>
 
 typedef struct Client {
 	int sock;

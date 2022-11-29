@@ -1,18 +1,62 @@
+#define BUFF 1024
 #include "inputThread.h"
+#include "data.h"
 
 BuffLock *makeBuffLock() {
+    BuffLock *result = malloc(sizeof (BuffLock));
+    result->buffer = malloc(BUFF);
+    result->lock = malloc(sizeof(pthread_mutex_t));
+    pthread_mutex_init(result->lock, NULL);
 
+    return result;
 }
-	//create BuffLock struct, allocated buffer to size of BUFF, and initalize lock.
 
 void freeBuffLock(BuffLock *bl) {
-
+    free(bl->buffer);
+    free(bl->lock);
 }
-	//frees allocated memory for buffer and lock as well as the memory for bl.
+
+void *flipEndian(void *buff, int size) {
+    char *p = malloc(size);
+    for (int i = 0; i < size; i++) {
+        ((char *) p)[i] = ((char *) buff)[size - i - 1];
+    }
+    return p;
+}
 
 void *inputThread(void *buffer) {
+    BuffLock *buffLock = buffer;
 
+    char *result = malloc(BUFF);
+    int index = 0;
+    int currentChar;
+	bool runningMainThread = true;
+
+	while (runningMainThread) {
+		currentChar = getchar();
+        if (currentChar == 27) {
+            runningMainThread = false;
+            break;
+        } else if (currentChar == 10) {
+            if (pthread_mutex_lock(buffLock->lock) == 0) {
+                Data *d = makeData(result, index);
+                void *data = writeData(d);
+
+                if (littleEndian()) {
+                    flipEndian(data, index);
+                }
+
+                memcpy(buffLock->buffer, data, index + sizeof(int));
+                memset(result, 0, BUFF);
+                index = 0;
+                free(data);
+                freeData(d);
+
+                pthread_mutex_unlock(buffLock->lock);
+            }
+        } else if (currentChar != -1) {
+            result[index] = currentChar;
+            index++;
+        }
+    }
 }
-	//Receives a shared buffer with a pthread_mutex_t stored in it.  Pull the pthread_mutex_t out and store it. Test your code to make sure that this lock is properly connected to the pthread_mutex_t being used in main.
-	//buffer is shared between this thread and the main thread. In a loop have this function take in user input and stores it in a buffer, when the user hits enter take in the string from the input buffer and copy it into the shared buffer via a Data struct. The main thread should then pick up that there is data in the buffer, and unpack it to display the string the user typed in.
-	//If the user hits the escape key have the program end. Hint take in the user input charavter at a time, rather than line by line.

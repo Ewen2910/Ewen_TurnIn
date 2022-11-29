@@ -1,3 +1,5 @@
+#include <pthread.h>
+#include <stdbool.h>
 
 typedef struct BuffLock {
 	pthread_mutex_t *lock;
