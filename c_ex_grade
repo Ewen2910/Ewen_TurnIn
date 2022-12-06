@@ -1,0 +1,40 @@
+-----------------------
+ ex0 - serverClient
+-----------------------
+	compiles ------ 10/10
+
+	works --------- 00/10
+
+	leak-proof ---- 00/00
+
+	notes
+			the server doesn;t close properly and so it doesn't free its memory
+
+-----------------------
+ ex1 - dataThread
+-----------------------
+	compiles ------ 00/10
+
+	works --------- 00/10
+
+	leak-proof ---- 00/00
+
+	notes
+		didn't compile
+		main.c:47:40: error: incompatible type for argument 3 of ‘pthread_create’
+		 47 |         pthread_create(&handle, &attr, inputThread, inputBuffer);
+
+-----------------------
+ ex2 - p2p
+-----------------------
+	compiles ------ 00/10
+
+	works --------- 00/10
+
+	leak-proof ---- 00/00
+
+	notes
+
+-----------------------
+total ----------- 10/40  
+
