@@ -1,45 +1,51 @@
 #include "data.h"
 
+bool runningMainThread;
+
+// Endian is how you read in binary (left to right or reverse) 
 bool littleEndian() {
-    unsigned int i = 1;
-    char *c = (char*)&i;
-    if (*c) {
-        return true;
-    }
-    else
-        return false;
+    union {
+        uint32_t i;
+        char c[4];
+    } e = { 0x01000000 };
+
+    return e.c[0] ? false : true;
 }
 
-Data *makeData(void *dat, int bytes){
+Data *makeData(void *dat, int bytes) {
     Data *d = malloc(sizeof(Data));
-     d->arr = malloc(sizeof(int) * bytes);
-    d->arr = dat;
+
     d->bytes = bytes;
+    d->arr = malloc(bytes);
+    memcpy(d->arr, dat, bytes);
     return d;
 }
 
 void *writeData(Data *d) {
-    void * res = malloc(sizeof(void) * d->bytes);
-    memcpy(res, d->arr, sizeof(d->bytes));
-    return res;
+    void *buffer = malloc(d->bytes + sizeof(int));
+
+    memcpy(buffer, &d->bytes, sizeof (int));
+    memcpy(buffer + sizeof (int), d->arr, d->bytes);
+    return buffer;
 }
-    //Allocates a buffer with the exact size of the Data and then copies the data being pointed to by the Data struct into the buffer along with the size of the buffer. Returns a pointer to the buffer.
 
 Data *readData(void *buffer) {
-    Data *d = malloc(sizeof(Data));
-
-    int size = 0;
-    memcpy(&size, buffer, sizeof(int));
-    d->bytes = size;
-
-    d->arr = calloc(1, size);
-    memcpy(d->arr, buffer + sizeof(int), size);
+    int bytes = 0;
+    
+    memcpy(&bytes, buffer, sizeof(int));
+    if (bytes == 0) {
+        return 0;
+    }
+    Data *d = (Data*)calloc(1, sizeof(Data));
+    d->bytes = bytes;
+    d->arr = calloc(1, bytes);
+    memcpy(d->arr, buffer + sizeof(int), bytes);
     return d;
 }
-	//Declares a Data struct. Reads from buffer created with the writeData function. First it reads size from the buffer (and copies it into the Data struct’s bytes field) so that it knows how much data is in the buffer. Then it reads that much data from the buffer and copies it into the Data struct’s arr field.
 
-void freeData(Data *d){
+void freeData(Data *d) {
     free(d->arr);
     free(d);
 }
-//Free the allocated array in d and also d itself.
+
+

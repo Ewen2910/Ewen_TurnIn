@@ -1,6 +1,5 @@
 #define BUFF 1024
 #include "inputThread.h"
-#include "data.h"
 
 BuffLock *makeBuffLock() {
     BuffLock *result = malloc(sizeof (BuffLock));
@@ -26,18 +25,17 @@ void *flipEndian(void *buff, int size) {
 
 void *inputThread(void *buffer) {
     BuffLock *buffLock = buffer;
-
     char *result = malloc(BUFF);
     int index = 0;
     int currentChar;
-	bool runningMainThread = true;
 
-	while (runningMainThread) {
-		currentChar = getchar();
+    while (runningMainThread) {
+        currentChar = getchar();
         if (currentChar == 27) {
             runningMainThread = false;
             break;
-        } else if (currentChar == 10) {
+        }
+        else if (currentChar == 10) {
             if (pthread_mutex_lock(buffLock->lock) == 0) {
                 Data *d = makeData(result, index);
                 void *data = writeData(d);
@@ -54,7 +52,8 @@ void *inputThread(void *buffer) {
 
                 pthread_mutex_unlock(buffLock->lock);
             }
-        } else if (currentChar != -1) {
+        }
+        else if (currentChar != -1) {
             result[index] = currentChar;
             index++;
         }
