@@ -1,0 +1,33 @@
+-----------------------
+Blockchain Structure
+-----------------------
+	compiles -------- 00/05
+block.c:102:6: error: conflicting types for ‘printChain’; have ‘void(Blockchain *, void (*)(Block *))’
+  102 | void printChain(Blockchain *bc, void (*printFunc)(Block*)) {
+      |      ^~~~~~~~~~
+In file included from block.c:1:
+block.h:33:6: note: previous declaration of ‘printChain’ with type ‘void(Blockchain *)’
+   33 | void printChain(Blockchain *bc);
+      |      ^~~~~~~~~~
+make: *** [Makefile:12: block.o] Error 1
+
+	works ----------- 00/15
+		makeBlock------ 0/4
+		addBlock------- 0/2
+		validateChain-- 0/4
+		printBlock----- 0/1
+		printChain----- 0/1
+		freeBlockchain- 0/1
+		saveChain------ 0/1
+		loadChain------ 0/1
+-----------------------
+	leak-proof ---- 00/00
+
+	notes
+		The path way included for data, was also wrong, I corrected it and still got an error.
+
+-----------------------
+	
+-----------------------
+total ----------- 00/20  
+

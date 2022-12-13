@@ -1,0 +1,87 @@
+-----------------------
+RSA Signatures
+-----------------------
+	compiles ---------- 00/05
+gcc -c -g -Wall -w -pedantic transaction.c
+gcc -c -g -Wall -w -pedantic crypt.c
+gcc -c -g -Wall -w -pedantic RSA/RSA.c
+ar rs libTransaction.a transaction.o crypt.o RSA.o
+ar: creating libTransaction.a
+gcc -g -o transaction main.c libTransaction.a -lm    
+main.c: In function ‘main’:
+main.c:4:9: warning: implicit declaration of function ‘srand’ [-Wimplicit-function-declaration]
+    4 |         srand(time(0));
+      |         ^~~~~
+main.c:4:15: warning: implicit declaration of function ‘time’ [-Wimplicit-function-declaration]
+    4 |         srand(time(0));
+      |               ^~~~
+main.c:2:1: note: ‘time’ is defined in header ‘<time.h>’; did you forget to ‘#include <time.h>’?
+    1 | #include "transaction.h"
+  +++ |+#include <time.h>
+    2 | 
+main.c:5:9: error: unknown type name ‘Key’
+    5 |         Key *sender = makeKeyPair();
+      |         ^~~
+main.c:5:23: warning: implicit declaration of function ‘makeKeyPair’ [-Wimplicit-function-declaration
+    5 |         Key *sender = makeKeyPair();
+      |                       ^~~~~~~~~~~
+main.c:5:23: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast Wint-conversion]
+main.c:6:9: error: unknown type name ‘Key’
+    6 |         Key *recipient = makeKeyPair();
+      |         ^~~
+main.c:6:26: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast Wint-conversion]
+    6 |         Key *recipient = makeKeyPair();
+      |                          ^~~~~~~~~~~
+main.c:7:9: warning: implicit declaration of function ‘printKey’ [-Wimplicit-function-declaration]
+    7 |         printKey(sender);
+      |         ^~~~~~~~
+main.c:9:9: error: unknown type name ‘NUM’
+    9 |         NUM *cipher = signTransaction(sender, recipient[0], 10);
+      |         ^~~
+main.c:9:23: warning: implicit declaration of function ‘signTransaction’ [-Wimplicit-function-declaraion]
+    9 |         NUM *cipher = signTransaction(sender, recipient[0], 10);
+      |                       ^~~~~~~~~~~~~~~
+main.c:9:23: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast Wint-conversion]
+main.c:10:9: error: unknown type name ‘Transaction’
+   10 |         Transaction *t = decryptTransaction(cipher, sender[0]);
+      |         ^~~~~~~~~~~
+main.c:10:26: warning: implicit declaration of function ‘decryptTransaction’ [-Wimplicit-function-decaration]
+   10 |         Transaction *t = decryptTransaction(cipher, sender[0]);
+      |                          ^~~~~~~~~~~~~~~~~~
+main.c:10:26: warning: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast[-Wint-conversion]
+main.c:12:17: warning: implicit declaration of function ‘printTransaction’ [-Wimplicit-function-declaation]
+   12 |                 printTransaction(t);
+      |                 ^~~~~~~~~~~~~~~~
+main.c:13:17: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+   13 |                 free(t);
+      |                 ^~~~
+main.c:2:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+    1 | #include "transaction.h"
+  +++ |+#include <stdlib.h>
+    2 | 
+main.c:13:17: warning: incompatible implicit declaration of built-in function ‘free’ [-Wbuiltin-declaation-mismatch]
+   13 |                 free(t);
+      |                 ^~~~
+main.c:13:17: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+main.c:15:9: warning: incompatible implicit declaration of built-in function ‘free’ [-Wbuiltin-declartion-mismatch]
+   15 |         free(cipher);
+      |         ^~~~
+main.c:15:9: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+
+	works ------------- 00/15
+		makeKeyPair-------- 0/2
+		CryptData --------- 0/1
+		printKey----------- 0/1
+		signTransaction---- 0/5
+		decryptTransaction- 0/5
+		printTransaction--- 0/1
+-----------------------
+	leak-proof -------- 00/00
+
+	notes
+
+-----------------------
+	
+-----------------------
+total ----------- 00/20  
+
