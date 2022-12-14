@@ -1,0 +1,110 @@
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 479624278
+B. TICKER: BTC
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
