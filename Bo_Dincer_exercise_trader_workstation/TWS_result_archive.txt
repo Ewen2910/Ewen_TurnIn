@@ -1,0 +1,124 @@
+# Talk to Jules he will help you out with the market data subscription.
+# Also.. you can talk to Romain his output was proper it looked like this
+
+{272093,MSFT,244.75,58725,11199041,248.31,244.16,245.42,246.536}
+{265598,AAPL,142.34,224627,52260740,145.57,140.9,142.16,143.5275}
+{4815747,NVDA,171.6,153216,34904227,175.83,169.75,170.01,173.1595}
+{76792991,TSLA,173.84,323511,83727059,182.5,173.36,179.05,179.685}
+{107113386,META,115.25,75713,17630314,117.54,113.87,115.9,116.19}
+{6459,DIS,92.37,31298,6361769,94.91,91.9,93.38,93.851}
+{208813720,GOOG,93.91,91517,14697956,94.49,93.02,93.07,93.8885}
+{479624278,BTC,17182,13298,67.07601817,17264.5,17097.75,17121.75,17165.325}
+{495759171,ETH,1276.25,6495,506.35607244,1283.75,1263.15,1265.6,1270.795}
+
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 479624278
+B. TICKER: BTC
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
+A. conId: 0
+B. TICKER: 0
+C. PRICE: 0
+D. BAR_COUNT: 0
+E. VOLUME: 0
+F. HIGH_PRICE: 0
+G. LOW_PRICE: 0
+H. CURRENT_PRICE: 0
+I. WAP: 0
+J. VWAP: Not accessible (paid version required)
+
