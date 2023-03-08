@@ -1,0 +1,17 @@
+Hey Ewen,
+   
+Please organize your repository so that all outputs are in their corresponding project folders.
+
+Also, please add your resume.pdf as a showcase on your main "root" directory
+
+Should look like this.
+
+// resume.pdf
+
+// WORK COMPLETED     / PROJECT 1
+                      / PROJECT 2
+                      / ...
+                    
+// WORK IN PROGRESS   / PROJECT 5
+
+// JOB INTERVIEW DOCS
